@@ -1,88 +1,113 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>main page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Eyu Game Ops</title>
-    <!-- Bootstrap -->
-    <!-- <link href="static/css/bootstrap.min.css" rel="stylesheet">
-    -->{% load staticfiles %}
-    <link href="{% static "base/css/bootstrap.min.css" %}" rel="stylesheet">
-    <link href="{% static "base/css/font-awesome.min.css" %}" rel="stylesheet">
-    <link href="{% static "base/css/awesome-bootstrap-checkbox.css" %}" rel="stylesheet">
-    <!-- <link href="static/css/base.css" rel="stylesheet">
-    -->
-    <link href="{% static "base/css/base.css" %}" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]--></head>
+  <!-- Le styles -->
+  <link href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.css" rel="stylesheet">
+  <link href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/static/css/pagination.css" rel="stylesheet">
 
-  <body>
-    <nav class="navbar navbar-default navbar-inverse" role="navigation">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="base.html">EyuGame Ops</a></div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
+  <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+    </style>
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+  <script src="../assets/js/html5shiv.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+
+</head>
+
+<body>
+
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="#">运维管理平台</a>
+        <div class="nav-collapse collapse">
+
+          <ul class="nav">
+            <li class="active">
+              <a href="#">主面板</a>
+            </li>
             <li>
-              <a href="#">BOP项目</a></li>
+              <a href="/ip_manage/">设备管理</a>
+            </li>
             <li>
-              <a href="#">爱西游项目</a></li>
+              <a href="#">服务监控</a>
+            </li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="buttun">
-              <a href=/admin>
-                <b>Admin</b>
+          <ul class="nav pull-right">
+            <li class="divider-vertical">
+              <a>{{username}}</a>
+            </li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                后台管理 <strong class="caret"></strong>
               </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="/admin/">用户管理</a>
+                </li>
+                <li>
+                  <a href="#">修改密码</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="/logout/">退出</a>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
-        <!-- /.navbar-collapse --></div>
-      <!-- /.container-fluid --></nav>{% block content %}{% endblock %}
-    <div class="affix-content">
-      <div class="container ">
-        <div class="page-header">
-          <h3>
-            <span class="glyphicon glyphicon-th-list"></span>Navigation</h3></div>{% block page %}
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus orci, viverra nec neque non, tincidunt commodo leo. Nullam eleifend velit purus, id aliquam elit venenatis sit amet. Cras vel nisl eget eros tempus viverra. Phasellus in enim et nulla tempor blandit. Donec at lectus sit amet velit faucibus tincidunt quis sed est. Mauris placerat purus odio. In egestas, velit quis congue sodales, turpis lacus pellentesque neque, quis accumsan orci nibh sed mauris. Sed sit amet pulvinar felis. Aliquam consequat tellus non ligula elementum, at egestas quam vestibulum. {% endblock page %}</div>
+        <!--/.nav-collapse --> </div>
     </div>
-    </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <!-- <script src="static/js/jquery.min.js"></script>
-    -->
-    <script src="{% static "base/js/jquery.min.js" %}"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <!-- <script src="static/js/bootstrap.min.js"></script>
-    -->
-    <script src="{% static "base/js/bootstrap.min.js" %}"></script>
-    <script src="{% static "base/js/ow.js" %}"></script>
-    <script src="{% static "base/js/clipboard.js" %}" type="text/javascript"></script>
+  </div>
 
-    <script>
-    var clipboard = new Clipboard('.btn');
+  <div class="container">
+    {% block content %}
 
-    clipboard.on('success', function(e) {
-    	alert("文字已复制到剪贴板中");
-        console.log(e);
-    });
+      {% endblock %}
+    <hr>
 
-    clipboard.on('error', function(e) {
-        console.log(e);
-    });
-    </script>
-  </body>
+    <footer>
+      <p>&copy; By lsy 2014</p>
+    </footer>
 
+  </div>
+  <!--/.fluid-container-->
+
+  <!-- Le javascript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdn.bootcss.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+</body>
 </html>
