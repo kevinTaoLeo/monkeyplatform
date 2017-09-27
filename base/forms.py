@@ -20,11 +20,9 @@ __mtime__ = '2017/9/27'
                   ┗┻┛  ┗┻┛
 """
 
-from django.conf.urls import url, include
-from base import views
+from django import forms
 
 
-urlpatterns = [
-    # url(r'^$', user.user_list, name='accounts'),
-    url(r'^proper_manage/', views.proper_view, name='proper_manage'),
-]
+class ProerForm(forms.Form):
+    variable_name = forms.CharField(label='配置名：',max_length=100)
+    variable_word = forms.CharField(label='配置值：',max_length=100)
