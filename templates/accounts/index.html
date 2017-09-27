@@ -23,7 +23,7 @@
 });
 </script>
  <!--SIGN UP-->
- <h1>klasikal Login Form</h1>
+ <h1>monkeyplatfom登录界面</h1>
 <div class="login-form">
 	<div class="close"> </div>
 		<div class="head-info">
@@ -36,7 +36,10 @@
 		<img src="{%  static "accounts/images/avtar.png" %}" />
 	</div>
 			<form  method = 'post' enctype="multipart/form-data">
-                {{uf.as_p}}
+
+               <input type="text" class="text" value="Username" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" >
+						<div class="key">
+					<input type="password" value="Password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
     <div class="signin">
 		<input type="submit" value="ok" >
 	</div>
@@ -44,7 +47,7 @@
 
 </div>
  <div class="copy-rights">
-					<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+					<p>Copyright &copy; 2017.Company name All rights reserved.</p>
 			</div>
 
 </body>
