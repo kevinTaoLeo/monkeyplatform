@@ -26,3 +26,7 @@ from django import forms
 class ProerForm(forms.Form):
     variable_name = forms.CharField(label='配置名：',max_length=100)
     variable_word = forms.CharField(label='配置值：',max_length=100)
+
+#    def clean_variable_name(self):
+#        variable_name = self.cleaned_data['variable_name']
+#        is_exist = models.Proper.objects.filter(Q(variable_name=variable_name) | Q(variable_word=variable_word))

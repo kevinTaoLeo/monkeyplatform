@@ -26,5 +26,6 @@ from base import views
 
 urlpatterns = [
     # url(r'^$', user.user_list, name='accounts'),
-    url(r'^proper_manage/', views.proper_view, name='proper_manage'),
+    url(r'^proper_manage/proper_save', views.proper_save, name='proper_save'),
+    url(r'^proper_manage/proper_view', views.proper_view, name='proper_view'),
 ]

@@ -1,28 +1,32 @@
 {% extends 'base/base.html' %}
 {% block content %}
-<form  method = 'post' enctype="multipart/form-data">
+    {{ error }}
+    <form  method = 'post' enctype="multipart/form-data" action="/base/proper_manage/proper_save">
     <input type="text" required="required" placeholder="配置名" name="variable_name"></input>
             <input type="text" required="required" placeholder="配置值" name="variable_word"></input>
             <button class="but" type="submit">提交</button>
+
+
+
+
 </form>
     <table class="table">
         <th></th>
         <th>配置名</th>
         <th>配置值</th>
-        <form class="form-horizontal" role="form" method="post">
+        <th>修改时间值</th>
+
+        <form class="form-horizontal"  method="GET">
         <!--show ip list-->
           {% if show_list %}
-            {% for ip in show_list %}
+            {% for pp in show_list %}
             <tr>
-              <td><input type="checkbox" class="checkbox" name="post_ip" value="{{ ip.ipaddr }}"></td>
-              <td><a href="/mod_ip/?ip={{ ip.ipaddr }}">{{ ip.ipaddr }}</a></td>
-              <td>{{ ip.hostname }}</td>
-              <td>{{ ip.ostype }}</td>
-              <td>{{ ip.ports }}</td>
-              <td>{{ ip.application }}</td>
+              <td></td>
+              <td>{{ pp.variable_name }}</td>
+                <td>{{ pp.variable_word }}</td>
+                <td>{{ pp.variable_date }}</td>
             </tr>
             {% endfor %}
-            <button type="submit" class="btn">删除</button>
           {%endif%}
 
         </form>
