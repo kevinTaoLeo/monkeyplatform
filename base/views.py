@@ -30,6 +30,7 @@ def proper_save(request):
             is_exist = models.Proper.objects.filter(Q(variable_name=variable_name) | Q(variable_word=variable_word))
             if is_exist:
                 return render(request,'base/property_manager.html',{'ps': ps, 'error': ps.errors})
+#                   return HttpResponseRedirect('proper_view')
             else:
                 proper.variable_name = variable_name
                 proper.variable_word = variable_word
